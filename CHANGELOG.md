@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Documentation/Theory (`/docs/`, `/theory/`): CC BY-NC 4.0 license
   - Updated README.md, CITATION.cff, and CONTRIBUTING.md to reflect dual licensing
   - Added NOTICE.md with comprehensive licensing guidance
-  - Replaced single LICENSE file with LICENSE-CODE and LICENSE-DOCS
+  - Replaced single LICENSE file with LICENSE-CODE and docs/LICENSE-DOCS
 
 ## [0.1.0] - 2024-09-10
 ### Added

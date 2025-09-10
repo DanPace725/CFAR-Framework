@@ -6,7 +6,7 @@ This repository uses a **dual licensing structure** to balance open collaboratio
 
 ### 📄 Documentation and Theory (CC BY-NC 4.0)
 **License**: Creative Commons Attribution-NonCommercial 4.0 International  
-**License File**: `LICENSE-DOCS`
+**License File**: `docs/LICENSE-DOCS`
 
 **Applies to**:
 - `/docs/` - All documentation, whitepaper, glossary, patterns, ethics
@@ -81,7 +81,7 @@ For commercial use of theoretical materials (books, courses, consulting framewor
 
 ## Questions?
 
-- **General Licensing**: See individual license files (`LICENSE`, `LICENSE-DOCS`)
+- **General Licensing**: See individual license files (`LICENSE-CODE`, `docs/LICENSE-DOCS`)
 - **Commercial Licensing**: Contact repository maintainers
 - **Academic Use**: Generally permitted under current licenses with proper attribution
 - **Integration Questions**: Open an issue or discussion

@@ -32,7 +32,7 @@ See the `docs/` directory for comprehensive documentation including:
 
 This project uses a **dual licensing structure**:
 
-- **Code** (`/engine/`, `/examples/`, `/ui/`, `/configs/`): [Apache 2.0](LICENSE) - Use freely in commercial and open-source projects
-- **Documentation & Theory** (`/docs/`, `/theory/`): [CC BY-NC 4.0](LICENSE-DOCS) - Free for non-commercial use with attribution
+- **Code** (`/engine/`, `/examples/`, `/ui/`, `/configs/`): [Apache 2.0](LICENSE-CODE) - Use freely in commercial and open-source projects
+- **Documentation & Theory** (`/docs/`, `/theory/`): [CC BY-NC 4.0](docs/LICENSE-DOCS) - Free for non-commercial use with attribution
 
 See [NOTICE.md](NOTICE.md) for complete licensing details.
