@@ -15,6 +15,15 @@ pyyaml>=6.0
 matplotlib>=3.5.0
 seaborn>=0.11.0
 
+# Web UI dependencies
+streamlit>=1.28.0
+plotly>=5.15.0
+fastapi>=0.100.0
+uvicorn>=0.23.0
+
+# Report generation
+reportlab>=4.0.0
+
 # Logging and monitoring
 structlog>=21.0.0
 

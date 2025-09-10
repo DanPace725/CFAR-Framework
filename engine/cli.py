@@ -139,9 +139,9 @@ def run(path: str, output_file: str = None, output_format: str = "json"):
         }
         results["simulation_data"].append(timestep_data)
         
-        # Print progress with control mode
+        # Print progress with control mode (using ASCII for Windows compatibility)
         mode_indicator = "F" if control_mode == "fluctuation" else "P"
-        print(f"day {t:03d}  Y={s.Y:.3f}  N={s.N:.3f}  A={s.A:.3f}  C={s.C:.3f}  B={s.B:.3f}  ΔYmin={dYmin:.3f}  uC={uC:+.3f}  uF={uF:+.3f}  [{mode_indicator}]  arm={arm}({arm_name})")
+        print(f"day {t:03d}  Y={s.Y:.3f}  N={s.N:.3f}  A={s.A:.3f}  C={s.C:.3f}  B={s.B:.3f}  dYmin={dYmin:.3f}  uC={uC:+.3f}  uF={uF:+.3f}  [{mode_indicator}]  arm={arm}({arm_name})")
     
     # Add summary statistics
     final_error = abs(target - s.Y)

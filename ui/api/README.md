@@ -1,34 +1,71 @@
-# API Directory
+# CFAR Framework API
 
-<!-- FastAPI stub -->
+FastAPI-based REST API for the CFAR Framework, providing programmatic access to simulation control and data analysis.
 
-This directory contains the FastAPI-based REST API for the Resolution Systems Framework.
+## Features
+- **Simulation Management**: Create, run, and monitor simulation jobs
+- **Configuration Validation**: Validate simulation parameters before execution
+- **Results Analysis**: Access and compare simulation results
+- **Background Processing**: Non-blocking simulation execution
+- **Interactive Documentation**: Auto-generated API docs with Swagger UI
 
-## Purpose
-The API provides programmatic access to resolution system functionality, enabling:
-- System configuration and control
-- Real-time monitoring and metrics
-- Data ingestion and export
-- Integration with external systems
-
-## Structure
-*Coming soon - API structure and endpoints*
-
-### Endpoints
-*Coming soon - list of available API endpoints*
-
-### Authentication
-*Coming soon - authentication and authorization details*
-
-### Rate Limiting
-*Coming soon - rate limiting policies*
-
-## Development
-To run the API locally:
+## Quick Start
 ```bash
-# TODO: Add startup instructions
-# uvicorn api.main:app --reload
+# From project root
+python run_api.py
 ```
 
-## Documentation
-API documentation will be available at `/docs` when running the server.
+Then visit:
+- **API**: http://localhost:8000
+- **Documentation**: http://localhost:8000/docs
+- **Health Check**: http://localhost:8000/health
+
+## API Endpoints
+
+### Core Endpoints
+- `GET /` - API health check
+- `GET /health` - Detailed health status
+- `POST /simulations/` - Create new simulation job
+- `GET /simulations/{job_id}` - Get job status
+- `GET /simulations/{job_id}/result` - Get simulation results
+- `GET /simulations/` - List all jobs
+- `DELETE /simulations/{job_id}` - Delete job and results
+
+### Configuration
+- `GET /configs/default` - Get default configuration
+- `POST /configs/validate` - Validate configuration
+
+### Analysis
+- `POST /analysis/compare` - Compare multiple simulation results
+
+## Usage Examples
+
+### Create Simulation
+```bash
+curl -X POST "http://localhost:8000/simulations/" \
+  -H "Content-Type: application/json" \
+  -d @config.json
+```
+
+### Check Job Status
+```bash
+curl "http://localhost:8000/simulations/{job_id}"
+```
+
+### Get Results
+```bash
+curl "http://localhost:8000/simulations/{job_id}/result"
+```
+
+## Integration
+The API is designed for integration with:
+- External monitoring systems
+- Automated simulation pipelines
+- Third-party analytics tools
+- Custom web applications
+
+## Development
+```bash
+# Run with auto-reload
+uvicorn ui.api.main:app --reload --host 0.0.0.0 --port 8000
+```

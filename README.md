@@ -9,10 +9,26 @@ limit: don't "print" patterns finer than the system can resolve.
 - **Outcome**: stable behavior change without relying on money-only incentives
 
 ## Quickstart
+
+### 🚀 Interactive Dashboard (Recommended)
 ```bash
-python -m venv .venv && source .venv/bin/activate
+python -m venv .venv && source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r engine/requirements.txt
 
+# Launch interactive dashboard
+python run_dashboard.py
+```
+Then open http://localhost:8501 in your browser for the full interactive experience!
+
+### 🔌 API Server (Optional)
+```bash
+# Launch REST API server (optional - for integrations)
+python run_api.py
+```
+API available at http://localhost:8000 with docs at http://localhost:8000/docs
+
+### 💻 Command Line Interface
+```bash
 # Run simulation with terminal output
 cd engine
 python cli.py run --config configs/littering.yml
@@ -21,9 +37,13 @@ python cli.py run --config configs/littering.yml
 python cli.py run --config configs/littering.yml --output results.json
 python cli.py run --config configs/littering.yml --output results.csv --format csv
 
-# Analyze results
+# Analyze results with enhanced visualizations
 cd ../examples
 python analyze_results.py ../engine/results.json --plots
+
+# Generate comprehensive reports
+cd ..
+python generate_report.py engine/results.json --all
 ```
 
 ## Links

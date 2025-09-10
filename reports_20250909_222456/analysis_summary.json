@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "framework": "CFAR Framework",
+    "version": "0.1.0",
+    "timestamp": "2025-09-09T19:39:55.562591",
+    "config_file": "configs/littering.yml",
+    "target_Y": 0.95,
+    "horizon_days": 90,
+    "initial_state": {
+      "Y": 0.8,
+      "N": 0.5,
+      "A": 0.1,
+      "C": 0.3,
+      "B": 0.2
+    }
+  },
+  "analysis": {
+    "performance": {
+      "final_performance": 0.7060802017488128,
+      "peak_performance": 0.981805123858899,
+      "performance_range": 0.2994589709602936,
+      "target_achievement": false,
+      "time_to_target": 5,
+      "stability_ratio": 0.7350517058293383,
+      "phases": [
+        {
+          "phase": "approaching",
+          "start_day": 0,
+          "end_day": 1,
+          "duration": 2
+        },
+        {
+          "phase": "near_target",
+          "start_day": 2,
+          "end_day": 4,
+          "duration": 3
+        },
+        {
+          "phase": "achieved",
+          "start_day": 5,
+          "end_day": 48,
+          "duration": 44
+        },
+        {
+          "phase": "near_target",
+          "start_day": 49,
+          "end_day": 63,
+          "duration": 15
+        },
+        {
+          "phase": "approaching",
+          "start_day": 64,
+          "end_day": 81,
+          "duration": 18
+        },
+        {
+          "phase": "building",
+          "start_day": 82,
+          "end_day": 82,
+          "duration": 1
+        },
+        {
+          "phase": "approaching",
+          "start_day": 83,
+          "end_day": 83,
+          "duration": 1
+        },
+        {
+          "phase": "building",
+          "start_day": 84,
+          "end_day": 89,
+          "duration": 6
+        }
+      ],
+      "performance_grade": "B"
+    },
+    "control_strategy": {
+      "precision_percentage": 3.3333333333333335,
+      "fluctuation_percentage": 96.66666666666667,
+      "total_fluctuation_pulses": 16,
+      "pulse_frequency": 17.77777777777778,
+      "total_control_effort": 12.014173826101713,
+      "average_control_effort": 0.13349082029001902,
+      "strategy_effectiveness": "highly_active",
+      "control_pattern": "fluctuation_dominant"
+    },
+    "dynamics": {
+      "constraint_trend": "declining",
+      "attention_saturation": true,
+      "max_attention": 0.9999314403867587,
+      "average_resolution": 0.24666056257375743,
+      "resolution_trend": "degrading",
+      "system_phases": [
+        "plateau",
+        "performance_decline"
+      ],
+      "dominant_dynamics": "constraint_evolution"
+    },
+    "insights": [
+      "\u26a0\ufe0f **Performance Gap**: System fell short of target by 24.4%.",
+      "\ud83c\udf0a **Fluctuation-Dominant**: System operated in fluctuation mode 97% of the time, indicating resolution limits were frequently encountered.",
+      "\u26a1 **Active Gradient Engineering**: 16 fluctuation pulses created alternative pathways when precision was blocked.",
+      "\ud83d\udd25 **Attention Saturation**: System reached maximum attention levels, indicating high engagement but potential for attention traps.",
+      "\ud83d\udcc9 **Constraint Decay**: System constraints declined over time, requiring increased reliance on fluctuation control."
+    ],
+    "recommendations": [
+      "\ud83d\udd27 **Improve Resolution**: Consider increasing sensing features, reducing intervention cadence, or improving operational precision to enable more precision mode operation.",
+      "\ud83c\udfaf **Adjust Target**: Current target may be beyond system capacity given current constraints.",
+      "\ud83c\udfd7\ufe0f **Strengthen Constraints**: Implement measures to maintain beneficial structural elements while allowing adaptive flexibility.",
+      "\ud83d\udca1 **Attention Management**: Consider attention allocation strategies to prevent traps and maintain sustainable engagement."
+    ]
+  },
+  "generated_at": "2025-09-09T22:24:57.439568",
+  "source_file": "engine\\fluctuation_test_v3.json"
+}

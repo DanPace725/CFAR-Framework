@@ -62,6 +62,18 @@ def analyze_json_results(results: dict):
     print(f"Max Y Achieved: {summary['max_Y_achieved']:.3f}")
     print()
     
+    # Control mode usage (new with fluctuation control)
+    if 'control_mode_usage' in summary:
+        print("=== Control Mode Usage ===")
+        precision_days = summary['control_mode_usage']['precision_days']
+        fluctuation_days = summary['control_mode_usage']['fluctuation_days']
+        total_days = results['metadata']['horizon_days']
+        
+        print(f"Precision Mode [P]: {precision_days} days ({precision_days/total_days*100:.1f}%)")
+        print(f"Fluctuation Mode [F]: {fluctuation_days} days ({fluctuation_days/total_days*100:.1f}%)")
+        print(f"Total Fluctuation Pulses: {summary.get('total_fluctuation_pulses', 0)}")
+        print()
+    
     # Arm usage
     print("=== Intervention Arm Usage ===")
     for arm, count in summary['arm_usage'].items():
@@ -157,24 +169,46 @@ def create_plots(df, output_dir="plots"):
     plt.savefig(output_path / 'state_evolution.png', dpi=300, bbox_inches='tight')
     plt.close()
     
-    # 2. Control Actions
+    # 2. Control Actions (Enhanced with fluctuation control)
     if 'uC' in df.columns and 'uA' in df.columns:
-        fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 8))
+        has_fluctuation = 'uF' in df.columns
+        n_plots = 3 if has_fluctuation else 2
+        
+        fig, axes = plt.subplots(n_plots, 1, figsize=(12, 10 if has_fluctuation else 8))
         fig.suptitle('CFAR Framework: Control Actions', fontsize=16)
         
-        ax1.plot(df['day'], df['uC'], color='red', linewidth=2, label='Structural Control (uC)')
-        ax1.set_title('PID Controller Output')
-        ax1.set_xlabel('Day')
-        ax1.set_ylabel('Control Signal')
-        ax1.grid(True, alpha=0.3)
-        ax1.legend()
+        if n_plots == 2:
+            axes = [axes[0], axes[1]]
         
-        ax2.plot(df['day'], df['uA'], color='blue', linewidth=2, label='Attention Control (uA)')
-        ax2.set_title('Bandit Controller Output')
-        ax2.set_xlabel('Day')
-        ax2.set_ylabel('Control Signal')
-        ax2.grid(True, alpha=0.3)
-        ax2.legend()
+        # PID Control
+        axes[0].plot(df['day'], df['uC'], color='red', linewidth=2, label='Structural Control (uC)')
+        axes[0].set_title('PID Controller Output (Precision Mode)')
+        axes[0].set_ylabel('Control Signal')
+        axes[0].grid(True, alpha=0.3)
+        axes[0].legend()
+        
+        # Bandit Control  
+        axes[1].plot(df['day'], df['uA'], color='blue', linewidth=2, label='Attention Control (uA)')
+        axes[1].set_title('Bandit Controller Output (Fast Interventions)')
+        axes[1].set_ylabel('Control Signal')
+        axes[1].grid(True, alpha=0.3)
+        axes[1].legend()
+        
+        # Fluctuation Control (if available)
+        if has_fluctuation:
+            axes[2].plot(df['day'], df['uF'], color='purple', linewidth=2, label='Fluctuation Control (uF)')
+            # Highlight pulses
+            pulse_days = df[df['uF'] > 0.01]['day']
+            pulse_values = df[df['uF'] > 0.01]['uF']
+            axes[2].scatter(pulse_days, pulse_values, color='orange', s=50, zorder=5, label='Fluctuation Pulses')
+            
+            axes[2].set_title('Fluctuation Controller Output (Gradient Engineering)')
+            axes[2].set_xlabel('Day')
+            axes[2].set_ylabel('Control Signal')
+            axes[2].grid(True, alpha=0.3)
+            axes[2].legend()
+        else:
+            axes[1].set_xlabel('Day')
         
         plt.tight_layout()
         plt.savefig(output_path / 'control_actions.png', dpi=300, bbox_inches='tight')
@@ -223,6 +257,34 @@ def create_plots(df, output_dir="plots"):
         
         plt.tight_layout()
         plt.savefig(output_path / 'arm_usage.png', dpi=300, bbox_inches='tight')
+        plt.close()
+    
+    # 5. Control Mode Timeline (New with fluctuation control)
+    if 'control_mode' in df.columns:
+        plt.figure(figsize=(12, 4))
+        
+        # Create timeline showing precision vs fluctuation modes
+        precision_mask = df['control_mode'] == 'precision'
+        fluctuation_mask = df['control_mode'] == 'fluctuation'
+        
+        plt.fill_between(df['day'], 0, 1, where=precision_mask, color='blue', alpha=0.7, label='Precision Mode [P]')
+        plt.fill_between(df['day'], 0, 1, where=fluctuation_mask, color='purple', alpha=0.7, label='Fluctuation Mode [F]')
+        
+        # Mark fluctuation pulses
+        if 'uF' in df.columns:
+            pulse_days = df[df['uF'] > 0.01]['day']
+            for day in pulse_days:
+                plt.axvline(x=day, color='orange', linestyle='--', alpha=0.8)
+        
+        plt.title('CFAR Framework: Control Mode Timeline')
+        plt.xlabel('Day')
+        plt.ylabel('Control Mode')
+        plt.yticks([0, 1], ['', ''])
+        plt.legend()
+        plt.grid(True, alpha=0.3)
+        
+        plt.tight_layout()
+        plt.savefig(output_path / 'control_timeline.png', dpi=300, bbox_inches='tight')
         plt.close()
     
     print(f"Plots saved to: {output_path.absolute()}")
