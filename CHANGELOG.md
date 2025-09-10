@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **MAJOR**: Fluctuation Control System - Complete implementation of engineered gradient creation
+  - Added `uF` (fluctuation control) as first-class control input to system dynamics
+  - Implemented `FluctuationController` class with attention trap detection
+  - Added Rayleigh-gated strategy switching between precision (PID) and fluctuation modes
+  - Created gradient strength calculation based on attention, constraint decay, and system stall
+  - Added attention trap detector for high A + flat dY/dt + declining C scenarios
+  - Enhanced CLI output to show control mode indicators [P]recision vs [F]luctuation
+  - Added fluctuation pulse tracking and cooldown management
+  - Improved resolution parameters (ΔY_min reduced from ~0.787 to ~0.247)
+
 ### Changed
 - **BREAKING**: Renamed project to "CFAR Framework" (Constraint-Fluctuation-Attention-Resolution)
   - Updated all documentation, code comments, and user-facing text
@@ -21,6 +32,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Updated README.md, CITATION.cff, and CONTRIBUTING.md to reflect dual licensing
   - Added NOTICE.md with comprehensive licensing guidance
   - Replaced single LICENSE file with LICENSE-CODE and docs/LICENSE-DOCS
+- **Enhanced System Dynamics**: Extended `step()` function to support fluctuation control
+  - Added gradient strength calculation and engineered variance injection
+  - Updated cost function to include fluctuation intervention costs
+  - Improved parameter estimation for better resolution (NA_eff, λ_eff, k₁)
+
+### Technical Implementation
+- **Bimodal Control Strategy**: System automatically switches between precision and fluctuation modes
+- **Attention Ecology**: Implements attention-as-energy-flow principles from theoretical foundation
+- **Gradient Engineering**: Creates curvature in attention landscape when precision is blocked
+- **Resolution-Aware Control**: Respects Rayleigh limits while providing alternative pathways
 
 ## [0.1.0] - 2024-09-10
 ### Added

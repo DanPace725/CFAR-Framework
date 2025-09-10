@@ -20,6 +20,13 @@ pid:
   max_step: 0.08   # maximum step size
   hysteresis: 0.02 # hysteresis threshold
 
+# Fluctuation controller parameters (engineered gradients)
+fluctuation:
+  max_uF: 0.2           # maximum fluctuation control magnitude
+  cooldown_days: 5      # minimum days between fluctuation pulses
+  A_threshold: 0.6      # attention level that triggers consideration (lowered)
+  stall_threshold: 0.015 # dY/dt threshold for detecting stalled progress
+
 # Fast intervention arms (bandit choices)
 fast_arms:
   - name: "injunctive"    # "most people don't litter"
@@ -29,20 +36,20 @@ fast_arms:
   - name: "identity"      # "be someone who cares about community"
     dose: 0.10
 
-# System parameter estimation inputs
+# System parameter estimation inputs (improved for better resolution)
 na_inputs: 
-  sensing_features: 8        # number of sensing dimensions
-  actuation_channels: 3      # number of control channels
-  feedback_latency_days: 3   # feedback delay
+  sensing_features: 12       # number of sensing dimensions (increased)
+  actuation_channels: 5      # number of control channels (increased)
+  feedback_latency_days: 2   # feedback delay (decreased)
 
 lambda_inputs: 
-  cadence_days: 7           # intervention frequency
-  spatial_scale_km: 1.0     # spatial scale
+  cadence_days: 3           # intervention frequency (decreased)
+  spatial_scale_km: 0.5     # spatial scale (decreased)
 
 k1_inputs: 
-  residual_std: 0.08        # model residual standard deviation
-  ops_variance: 0.05        # operational variance
-  habituation_rate: 0.04    # habituation/adaptation rate
+  residual_std: 0.05        # model residual standard deviation (decreased)
+  ops_variance: 0.03        # operational variance (decreased)
+  habituation_rate: 0.03    # habituation/adaptation rate (decreased)
 
 # Bandit reward threshold
 reward_threshold: 0.92

@@ -12,7 +12,18 @@ limit: don't "print" patterns finer than the system can resolve.
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -r engine/requirements.txt
-python -m engine.cli run --config engine/configs/littering.yml
+
+# Run simulation with terminal output
+cd engine
+python cli.py run --config configs/littering.yml
+
+# Save results to file
+python cli.py run --config configs/littering.yml --output results.json
+python cli.py run --config configs/littering.yml --output results.csv --format csv
+
+# Analyze results
+cd ../examples
+python analyze_results.py ../engine/results.json --plots
 ```
 
 ## Links
