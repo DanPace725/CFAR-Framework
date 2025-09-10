@@ -1,0 +1,58 @@
+# Continuous Integration Workflow
+# tests + lint + docs build
+
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9, "3.10"]
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r engine/requirements.txt
+        # TODO: Add test dependencies
+    
+    - name: Lint with flake8
+      run: |
+        # TODO: Add linting configuration
+        # flake8 engine/ --count --select=E9,F63,F7,F82 --show-source --statistics
+        echo "Linting step - coming soon"
+    
+    - name: Test with pytest
+      run: |
+        # TODO: Add test execution
+        # pytest engine/tests/
+        echo "Testing step - coming soon"
+
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+    
+    - name: Build documentation
+      run: |
+        # TODO: Add documentation build
+        echo "Documentation build - coming soon"

@@ -1,0 +1,48 @@
+# Littering Resolution System Configuration
+
+target_Y: 0.95
+horizon_days: 90
+
+# Initial system state
+init_state: 
+  Y: 0.80    # current outcome (80% compliance)
+  N: 0.50    # norm strength
+  A: 0.10    # attention level
+  C: 0.30    # constraint strength
+  B: 0.20    # burden level
+
+# PID controller parameters
+pid: 
+  kp: 0.8          # proportional gain
+  ki: 0.2          # integral gain
+  kd: 0.1          # derivative gain
+  deadband: 0.01   # deadband threshold
+  max_step: 0.08   # maximum step size
+  hysteresis: 0.02 # hysteresis threshold
+
+# Fast intervention arms (bandit choices)
+fast_arms:
+  - name: "injunctive"    # "most people don't litter"
+    dose: 0.10
+  - name: "descriptive"   # "see others not littering"
+    dose: 0.10
+  - name: "identity"      # "be someone who cares about community"
+    dose: 0.10
+
+# System parameter estimation inputs
+na_inputs: 
+  sensing_features: 8        # number of sensing dimensions
+  actuation_channels: 3      # number of control channels
+  feedback_latency_days: 3   # feedback delay
+
+lambda_inputs: 
+  cadence_days: 7           # intervention frequency
+  spatial_scale_km: 1.0     # spatial scale
+
+k1_inputs: 
+  residual_std: 0.08        # model residual standard deviation
+  ops_variance: 0.05        # operational variance
+  habituation_rate: 0.04    # habituation/adaptation rate
+
+# Bandit reward threshold
+reward_threshold: 0.92
