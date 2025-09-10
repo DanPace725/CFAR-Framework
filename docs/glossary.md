@@ -1,6 +1,6 @@
 # Glossary
 
-A working vocabulary for **Resolution Systems**.  
+A working vocabulary for the **CFAR Framework** (Constraint-Fluctuation-Attention-Resolution).  
 This is a living document — extend it as concepts evolve.
 
 ---
@@ -122,7 +122,7 @@ The limit of human/group capacity to meaningfully process complexity. If a probl
 **Cognitive Bandwidth Matcher**  
 A scoping tool that decomposes problems to match group capacity, surfaces only resolvable units, and shows connections to larger patterns.
 
-**Resolution Systems**  
-The general paradigm: design problems and interventions so they respect the system’s resolution limits (optical, social, cognitive).
+**CFAR Framework**  
+The Constraint-Fluctuation-Attention-Resolution paradigm: design problems and interventions so they respect the system's resolution limits (optical, social, cognitive).
 
 ---

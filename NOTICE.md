@@ -1,6 +1,6 @@
 # Licensing Notice
 
-## Resolution Systems Framework - Dual License Structure
+## CFAR Framework - Dual License Structure
 
 This repository uses a **dual licensing structure** to balance open collaboration with appropriate intellectual property protection:
 

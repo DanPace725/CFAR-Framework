@@ -1,6 +1,6 @@
 # Contributing Guide
 
-Thank you for your interest in contributing to the Resolution Systems Framework! This project uses a dual licensing structure that affects how contributions are handled.
+Thank you for your interest in contributing to the CFAR Framework! This project uses a dual licensing structure that affects how contributions are handled.
 
 ## Licensing for Contributors
 
@@ -39,8 +39,8 @@ If your contribution spans both code and documentation:
 ### Local Setup
 ```bash
 # Clone the repository
-git clone https://github.com/[username]/resolution-systems.git
-cd resolution-systems
+git clone https://github.com/[username]/cfar-framework.git
+cd cfar-framework
 
 # Set up Python environment
 python -m venv .venv
@@ -136,4 +136,4 @@ Contributors will be acknowledged in:
 - Academic papers citing contributor work where appropriate
 - GitHub contributor listings
 
-Thank you for helping make the Resolution Systems Framework better! 🎯
+Thank you for helping make the CFAR Framework better! 🎯

@@ -1,9 +1,9 @@
-# Resolution Systems Whitepaper
+# CFAR Framework Whitepaper
 
 <!-- Polished narrative & figures -->
 
 ## Abstract
-*Coming soon - comprehensive overview of the Resolution Systems Framework*
+*Coming soon - comprehensive overview of the CFAR Framework (Constraint-Fluctuation-Attention-Resolution)*
 
 ## Introduction
 *Coming soon - problem statement and motivation*

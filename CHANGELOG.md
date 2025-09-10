@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Changed
+- **BREAKING**: Renamed project to "CFAR Framework" (Constraint-Fluctuation-Attention-Resolution)
+  - Updated all documentation, code comments, and user-facing text
+  - Changed repository name references to `cfar-framework`
+  - Updated CLI description and application titles
+  - Enhanced branding consistency across all materials
 - **BREAKING**: Implemented dual licensing structure
   - Code (`/engine/`, `/examples/`, `/ui/`, `/configs/`): Apache 2.0 license
   - Documentation/Theory (`/docs/`, `/theory/`): CC BY-NC 4.0 license

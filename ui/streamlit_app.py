@@ -1,5 +1,5 @@
 """
-Streamlit Application for Resolution Systems Framework
+Streamlit Application for CFAR Framework
 
 # optional: small React/Streamlit app
 """
@@ -20,13 +20,13 @@ def main():
     Coming soon - complete Streamlit implementation
     """
     st.set_page_config(
-        page_title="Resolution Systems Framework",
+        page_title="CFAR Framework",
         page_icon="🎯",
         layout="wide"
     )
     
-    st.title("🎯 Resolution Systems Framework")
-    st.markdown("*Interactive dashboard for resolution system monitoring and control*")
+    st.title("🎯 CFAR Framework")
+    st.markdown("*Interactive dashboard for Constraint-Fluctuation-Attention-Resolution system monitoring and control*")
     
     # Sidebar for navigation
     st.sidebar.title("Navigation")

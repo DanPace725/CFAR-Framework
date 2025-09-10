@@ -1,8 +1,8 @@
-# Resolution Systems Framework - Requirements Document
+# CFAR Framework - Requirements Document
 
 ## 1. Executive Summary
 
-The Resolution Systems Framework is a practical implementation of resolution-limited control theory applied to behavior change systems. It provides a paradigm and engine for matching problem resolution to system capacity, using optical physics analogies to guide intervention design.
+The CFAR Framework (Constraint-Fluctuation-Attention-Resolution) is a practical implementation of resolution-limited control theory applied to behavior change systems. It provides a paradigm and engine for matching problem resolution to system capacity, using optical physics analogies to guide intervention design.
 
 ## 2. Functional Requirements
 
@@ -14,7 +14,7 @@ The Resolution Systems Framework is a practical implementation of resolution-lim
 - The system SHALL support continuous state values in the range [0,1] for all variables
 
 **FR-002: Resolution Limit Calculation**
-- The system SHALL implement the Rayleigh criterion: ΔY_min ≈ k₁·λ_eff / NA_eff
+- The system SHALL implement the CFAR Rayleigh criterion: ΔY_min ≈ k₁·λ_eff / NA_eff
 - The system SHALL estimate NA_eff (numerical aperture) from sensing and actuation capabilities
 - The system SHALL estimate λ_eff (wavelength) from intervention granularity and cadence
 - The system SHALL estimate k₁ (process factor) from uncertainty, habituation, and operational variance

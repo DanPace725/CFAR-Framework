@@ -1,7 +1,7 @@
-# Resolution Systems: A Paradigm & Engine
+# CFAR Framework: Constraint-Fluctuation-Attention-Resolution
 
 **TL;DR**: A practical framework for matching *problem resolution* to *system capacity*.
-We model behavior with Constraint–Fluctuation–Attention (CFA) and enforce a Rayleigh-style
+The CFAR Framework models behavior with Constraint–Fluctuation–Attention dynamics and enforces a Rayleigh-style
 limit: don't "print" patterns finer than the system can resolve.
 
 - **Paradigm**: optics → incentives → cognition (Rayleigh analogies)

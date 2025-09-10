@@ -1,7 +1,7 @@
 """
-Command Line Interface
+CFAR Framework Command Line Interface
 
-# `resys run --config configs/littering.yml`
+# `cfar run --config configs/littering.yml`
 """
 
 import argparse
@@ -75,7 +75,7 @@ def run(path: str):
 
 if __name__ == "__main__":
     # Simple argument parser for demo
-    ap = argparse.ArgumentParser(description="Resolution Systems CLI")
+    ap = argparse.ArgumentParser(description="CFAR Framework CLI")
     ap.add_argument("command", choices=["run"], help="Command to execute")
     ap.add_argument("--config", required=True, help="Path to configuration YAML file")
     args = ap.parse_args()

@@ -1,11 +1,11 @@
 """
-Resolution Engine Package
+CFAR Framework Engine Package
 
-Python package: the controller & simulators
+Python package: the controller & simulators for Constraint-Fluctuation-Attention-Resolution systems
 """
 
 __version__ = "0.1.0"
-__author__ = "Resolution Systems Team"
+__author__ = "CFAR Framework Team"
 
 # Core imports
 from .state import *

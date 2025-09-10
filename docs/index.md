@@ -1,9 +1,9 @@
-# Resolution Systems Framework Documentation
+# CFAR Framework Documentation
 
 <!-- Overview + mental models -->
 
 ## Welcome
-This is the main documentation site for the Resolution Systems Framework.
+This is the main documentation site for the CFAR Framework (Constraint-Fluctuation-Attention-Resolution).
 
 ## Mental Models
 *Coming soon - core conceptual frameworks and mental models*

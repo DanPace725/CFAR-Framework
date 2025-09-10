@@ -2,17 +2,19 @@
 # See https://citation-file-format.github.io/
 
 cff-version: 1.2.0
-title: "Resolution Systems Framework"
-message: "If you use this software, please cite it as below."
+title: "CFAR Framework: Constraint-Fluctuation-Attention-Resolution Framework"
+message: "If you use the CFAR Framework, please cite it as below."
 type: software
 authors:
   - family-names: "Pace"
     given-names: "Daniel"
     # orcid: "https://orcid.org/0000-0000-0000-0000"
-repository-code: "https://github.com/TODO/resolution-systems"
+repository-code: "https://github.com/TODO/cfar-framework"
 # url: "https://resolution-systems.example.com"
-abstract: "A framework for designing and implementing resolution systems based on control theory and cognitive principles. Uses dual licensing: Apache 2.0 for code, CC BY-NC 4.0 for theory and documentation."
+abstract: "The CFAR Framework provides a practical approach to designing resolution systems using Constraint-Fluctuation-Attention dynamics and control theory principles. Uses dual licensing: Apache 2.0 for code, CC BY-NC 4.0 for theory and documentation."
 keywords:
+  - cfar-framework
+  - constraint-fluctuation-attention
   - resolution-systems
   - control-theory
   - cognitive-science

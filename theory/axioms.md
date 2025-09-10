@@ -2,7 +2,7 @@
 
 <!-- Minimal assumptions & invariants -->
 
-## Core Resolution Principles
+## Core CFAR Principles
 
 ### 1. Resolution Limits
 Systems have **resolution limits**; pushing finer than the limit yields blur/oscillation.
