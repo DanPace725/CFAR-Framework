@@ -27,7 +27,7 @@ This repository uses a **dual licensing structure** to balance open collaboratio
 
 ### 💻 Code and Implementation (Apache 2.0)
 **License**: Apache License 2.0  
-**License File**: `LICENSE-CODE`
+**License File**: `LICENSE`
 
 **Applies to**:
 - `/engine/` - Python package and all implementation code
@@ -81,7 +81,7 @@ For commercial use of theoretical materials (books, courses, consulting framewor
 
 ## Questions?
 
-- **General Licensing**: See individual license files (`LICENSE-CODE`, `LICENSE-DOCS`)
+- **General Licensing**: See individual license files (`LICENSE`, `LICENSE-DOCS`)
 - **Commercial Licensing**: Contact repository maintainers
 - **Academic Use**: Generally permitted under current licenses with proper attribution
 - **Integration Questions**: Open an issue or discussion
